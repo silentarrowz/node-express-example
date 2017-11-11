@@ -2,8 +2,21 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var things = require('./things.js');
+var bodyParser = require('body-parser');
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 
+app.get('/',function(req,res){
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.post('/',function(req,res){
+    var name = req.body["video-url"];
+    res.send('name is : '+name);
+});
+
+/*
 //Simple request time logger
 app.use( '/things' ,function(req, res, next){
     console.log("A new request received at " + Date.now());
@@ -17,10 +30,7 @@ app.use( '/things' ,function(req, res, next){
 
 app.use('/things',things);
 
-app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
-
+*/
 app.get('/hello',function(req,res){
     res.send('Hello World');
 });
