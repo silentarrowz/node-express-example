@@ -1,0 +1,15 @@
+{
+  "name": "example node app",
+  "version": "1.0.0",
+  "description": "example node app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "faraz ahmed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
